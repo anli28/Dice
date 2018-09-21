@@ -4,7 +4,7 @@
 void setup()
 {
 	noLoop();
-	size(995,750);
+	size(990,750);
 }
 void draw()
 {
@@ -60,7 +60,8 @@ class Die //models one single dice cube
 	{
 		fill((int)(Math.random() * 256),(int)(Math.random() * 256),(int)(Math.random() * 256));
 		rect(myX,myY,20,20,7);
-		fill(0);
+		fill((int)(Math.random() * 256),(int)(Math.random() * 256),(int)(Math.random() * 256));
+		stroke((int)(Math.random() * 256),(int)(Math.random() * 256),(int)(Math.random() * 256));
 		if(diceRoll == 1){
 			ellipse(myX+10,myY+10,5,5);
 		}else if(diceRoll == 2) {
