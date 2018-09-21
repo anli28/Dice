@@ -39,15 +39,16 @@ class Die //models one single dice cube
 
 	void roll()
 	{
-		if(Math.random() < (1/6)){
+		double randomRoll = Math.random();
+		if(randomRoll < (0.1666667)){
 			diceRoll = 1;
-		}else if(Math.random() < (2/6)){
+		}else if(randomRoll < (0.33333333)){
 			diceRoll = 2;
-		}else if(Math.random() < (3/6)){
+		}else if(randomRoll < (0.5)){
 			diceRoll = 3;
-		}else if(Math.random() < (4/6)) {
+		}else if(randomRoll < (0.666666667)) {
 			diceRoll = 4;
-		}else if(Math.random() < (5/6)) {
+		}else if(randomRoll < (0.83333333)) {
 			diceRoll = 5;
 		}else{
 			diceRoll = 6;
@@ -66,13 +67,27 @@ class Die //models one single dice cube
 			ellipse(myX+7,myY+10,5,5);
 			ellipse(myX+14,myY+10,5,5);
 		}else if(diceRoll == 3) {
-
+			ellipse(myX+5,myY+15,5,5);
+			ellipse(myX+10,myY+10,5,5);
+			ellipse(myX+15,myY+5,5,5);
 		}else if(diceRoll == 4) {
-
+			ellipse(myX+7,myY+15,5,5);
+			ellipse(myX+14,myY+15,5,5);
+			ellipse(myX+7,myY+5,5,5);
+			ellipse(myX+14,myY+5,5,5);
 		}else if(diceRoll == 5) {
-
+			ellipse(myX+5,myY+15,5,5);
+			ellipse(myX+16,myY+15,5,5);
+			ellipse(myX+5,myY+5,5,5);
+			ellipse(myX+16,myY+5,5,5);
+			ellipse(myX+10,myY+10,5,5);
 		}else if(diceRoll == 6) {
-
+			ellipse(myX+7,myY+16,5,5);
+			ellipse(myX+7,myY+10,5,5);
+			ellipse(myX+7,myY+4,5,5);
+			ellipse(myX+14,myY+16,5,5);
+			ellipse(myX+14,myY+10,5,5);
+			ellipse(myX+14,myY+4,5,5);
 		}
 	}
 }
