@@ -8,8 +8,9 @@ void setup()
 }
 void draw()
 {
-	for(int x = 10; x < 975; x = x + 25){
-		for(int y = 10; y < 725; y = y + 25){
+	background(0);
+	for(int y = 10; y < 725; y = y + 25){
+		for(int x = 10; x < 975; x = x + 25){
 		Die dice = new Die(x,y);
 		dice.show();
 		}
@@ -22,7 +23,7 @@ void mousePressed()
 }
 
 
-class Die //models one single dice cube
+class Die 
 {
 	int myX;
 	int myY;
