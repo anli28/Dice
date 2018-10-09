@@ -1,5 +1,4 @@
-
-
+int total = 0;
 
 void setup()
 {
@@ -9,17 +8,21 @@ void setup()
 void draw()
 {
 	background(0);
-	for(int y = 10; y < 725; y = y + 25){
+	for(int y = 10; y < 700; y = y + 25){
 		for(int x = 10; x < 975; x = x + 25){
 		Die dice = new Die(x,y);
 		dice.show();
 		}
 	}
+	fill(255);
+	textSize(30);
+	text("Total: " + total,435,735);
 }
 
 void mousePressed()
 {
 	redraw();
+	total = 0;
 }
 
 
@@ -65,24 +68,29 @@ class Die
 		stroke((int)(Math.random() * 256),(int)(Math.random() * 256),(int)(Math.random() * 256));
 		if(diceRoll == 1){
 			ellipse(myX+10,myY+10,5,5);
+			total = total + 1;
 		}else if(diceRoll == 2) {
 			ellipse(myX+7,myY+10,5,5);
 			ellipse(myX+14,myY+10,5,5);
+			total = total + 2;
 		}else if(diceRoll == 3) {
 			ellipse(myX+5,myY+15,5,5);
 			ellipse(myX+10,myY+10,5,5);
 			ellipse(myX+15,myY+5,5,5);
+			total = total + 3;
 		}else if(diceRoll == 4) {
 			ellipse(myX+7,myY+15,5,5);
 			ellipse(myX+14,myY+15,5,5);
 			ellipse(myX+7,myY+5,5,5);
 			ellipse(myX+14,myY+5,5,5);
+			total = total + 4;
 		}else if(diceRoll == 5) {
 			ellipse(myX+5,myY+15,5,5);
 			ellipse(myX+16,myY+15,5,5);
 			ellipse(myX+5,myY+5,5,5);
 			ellipse(myX+16,myY+5,5,5);
 			ellipse(myX+10,myY+10,5,5);
+			total = total + 5;
 		}else if(diceRoll == 6) {
 			ellipse(myX+7,myY+16,5,5);
 			ellipse(myX+7,myY+10,5,5);
@@ -90,8 +98,10 @@ class Die
 			ellipse(myX+14,myY+16,5,5);
 			ellipse(myX+14,myY+10,5,5);
 			ellipse(myX+14,myY+4,5,5);
+			total = total + 6;
 		}
 	}
+
 }
 
 
